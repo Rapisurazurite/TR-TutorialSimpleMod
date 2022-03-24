@@ -61,9 +61,7 @@ namespace TutorialMod.Items
 		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit) {
 			float maxDetectRadius = 400f; // The maximum radius at which a projectile can detect a target
 			NPC closestNPC = FindClosestNPC(maxDetectRadius);
-			if (closestNPC == null)
-				;
-			else
+			if (closestNPC != null)
 			{
 				float projectileSpeed = Projectile.velocity.Length();//current projectile speed
 				Vector2 newVelocity = (closestNPC.Center - Projectile.Center).SafeNormalize(Vector2.Zero) * projectileSpeed;// new projectile velocity
