@@ -8,22 +8,22 @@ using Terraria.ObjectData;
 
 namespace TutorialMod.Items.OreSeed
 {
-    public class CopperSeeds : ModItem
+    public class TungstenSeeds : ModItem
     {
         public override void SetDefaults() {
             Item.CloneDefaults(ModContent.ItemType<IronSeeds>());
-            Item.createTile = ModContent.TileType<CopperHerb>();
+            Item.createTile = ModContent.TileType<TungstenHerb>();
         }
         
         public override void AddRecipes() {
             CreateRecipe(1).
-                AddIngredient(ItemID.CopperBar, 1)
+                AddIngredient(ItemID.TungstenBar, 1)
                 .AddTile(TileID.WorkBenches)
                 .Register();
         }
     }
 
-    public class CopperHerb : IronHerb
+    public class TungstenHerb : IronHerb
     {
         public override void SetStaticDefaults() {
             Main.tileFrameImportant[Type] = true;
@@ -36,9 +36,9 @@ namespace TutorialMod.Items.OreSeed
             AddMapEntry(new Color(128, 128, 128));
 
             TileObjectData.newTile.CopyFrom(TileObjectData.StyleAlch);
-            TileObjectData.newTile.AnchorAlternateTiles = new int[]
+            TileObjectData.newTile.AnchorValidTiles = new int[]
             {
-                TileID.CopperBrick,
+                TileID.TungstenBrick,
                 TileID.ClayPot,
                 TileID.PlanterBox
             };
@@ -47,8 +47,8 @@ namespace TutorialMod.Items.OreSeed
             SoundType = SoundID.Grass;
             SoundStyle = 0;
             DustType = DustID.Ambient_DarkBrown;
-            herbItemType = ItemID.CopperOre;
-            seedItemType = ModContent.ItemType<CopperSeeds>();
+            herbItemType = ItemID.TungstenOre;
+            seedItemType = ModContent.ItemType<TungstenSeeds>();
         }
     }
 }

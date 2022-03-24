@@ -36,12 +36,9 @@ namespace TutorialMod.Items.OreSeed
             AddMapEntry(new Color(128, 128, 128));
 
             TileObjectData.newTile.CopyFrom(TileObjectData.StyleAlch);
-            TileObjectData.newTile.AnchorAlternateTiles = new int[]
+            TileObjectData.newTile.AnchorValidTiles = new int[]
             {
-                TileID.CobaltBrick
-            };
-            
-            TileObjectData.newTile.AnchorAlternateTiles = new int[] {
+                TileID.CobaltBrick,
                 TileID.ClayPot,
                 TileID.PlanterBox
             };

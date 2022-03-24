@@ -61,15 +61,13 @@ namespace TutorialMod.Items.OreSeed
             //     TileID.HallowedGrass,
             //     ModContent.TileType<ExampleBlock>()
             // };
-            TileObjectData.newTile.AnchorAlternateTiles = new int[]
+            TileObjectData.newTile.AnchorValidTiles = new int[]
             {
-                TileID.IronBrick
-            };
-            
-            TileObjectData.newTile.AnchorAlternateTiles = new int[] {
+                TileID.IronBrick,
                 TileID.ClayPot,
                 TileID.PlanterBox
             };
+            
             TileObjectData.addTile(Type);
 
             SoundType = SoundID.Grass;
@@ -80,7 +78,7 @@ namespace TutorialMod.Items.OreSeed
         }
         
         // A helper method to quickly get the current stage of the herb (assuming the tile at the coordinates is our herb)
-        private static OrePlantStage GetStage(int i, int j) {
+        public static OrePlantStage GetStage(int i, int j) {
             Tile tile = Framing.GetTileSafely(i, j);
             return (OrePlantStage)(tile.TileFrameX / FrameWidth);
         }
