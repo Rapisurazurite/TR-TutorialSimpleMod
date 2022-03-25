@@ -63,6 +63,8 @@ namespace TutorialMod.Items.OreSeed
             // };
             TileObjectData.newTile.AnchorValidTiles = new int[]
             {
+            };
+            TileObjectData.newTile.AnchorAlternateTiles = new int[]            {
                 TileID.IronBrick,
                 TileID.ClayPot,
                 TileID.PlanterBox

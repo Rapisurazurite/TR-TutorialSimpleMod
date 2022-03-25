@@ -4,7 +4,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace TutorialMod.Items
-{
+{	
 	public class CopyScale : ModItem
 	{
 		public override void SetStaticDefaults()

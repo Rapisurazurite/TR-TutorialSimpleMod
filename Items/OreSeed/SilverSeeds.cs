@@ -38,6 +38,9 @@ namespace TutorialMod.Items.OreSeed
             TileObjectData.newTile.CopyFrom(TileObjectData.StyleAlch);
             TileObjectData.newTile.AnchorValidTiles = new int[]
             {
+            };
+            TileObjectData.newTile.AnchorAlternateTiles = new int[]
+            {
                 TileID.SilverBrick,
                 TileID.ClayPot,
                 TileID.PlanterBox
