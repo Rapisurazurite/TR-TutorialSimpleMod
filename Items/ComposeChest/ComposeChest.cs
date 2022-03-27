@@ -290,6 +290,8 @@ public class ComposeChestTile : ModTile
 public class ComposeItem : GlobalItem
 {
     public int composed;
+    public double damageBonus;
+
     
     public ComposeItem()
     {
@@ -300,6 +302,8 @@ public class ComposeItem : GlobalItem
     
     private void UpdateItemProperties(Item item)
     {
+        damageBonus = 1 + composed / 10.0;
+        
         item.damage = (int)Math.Ceiling((1+composed/10.0)*item.damage);
         item.useTime = (int)Math.Ceiling(Math.Max(item.useTime/2, item.useTime/(1+composed/10.0)));
         if (item.mana > 0)
@@ -319,7 +323,7 @@ public class ComposeItem : GlobalItem
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
         if (composed != 0) {
-            string bonusText = String.Format("bonus {0} will gain", composed);
+            string bonusText = String.Format("bonus {0}: damage multiple {1:F2}", composed, damageBonus);
             tooltips.Add(new TooltipLine(Mod, "Composed", bonusText));
         }
     }
